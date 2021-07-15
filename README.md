@@ -5,7 +5,7 @@
 </h1>
 
 <p align="center">
-  IGNEWS - Portal de notícias 📰🚀
+  IGNEWS - News portal 📰🚀
   <br>
   <br>
 
@@ -29,49 +29,49 @@
 ---
 
 <p align="center">
-  <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0; 
-  <a href="#rocket-tecnologias">Tecnologias</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requerimentos">Requerimentos</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-começando">Começando</a> &#xa0; &#xa0; | &#xa0;
-  <a href="#framed_picture-imagens">Imagens</a> &#xa0; &#xa0;
+  <a href="#rocket-technologies">About</a> &#xa0; | &#xa0; 
+  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-requests">Requests</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-starting">Starting</a> &#xa0; &#xa0; | &#xa0;
+  <a href="#framed_picture-images">Images</a> &#xa0; &#xa0;
 </p>
 
 <br>
 
-## :dart: Sobre ##
+## :dart: About ##
 
-O projeto ig.news é um blog onde os usuários podem ter acesso ao conteúdo de cada postagem de acordo com o status de sua assinatura.<br>
-O blog possui um sistema de compra integrado com o STRIPE, e após o usuário realizar o pagamento, sua inscrição estará ativa e pronta para visualizar o conteúdo completo
-de todo o blog. Caso o usuário não deseje optar pela assinatura, ele terá acesso limitado ao conteúdo das postagens. E todos os dados necessários para se fazer verificações
-de assinaturas ou dados dos usuários, estão salvos no banco de dados FaunaDB.
+The ig.news project is a blog where users can access the content of each post according to their subscription status.<br>
+The blog has a purchase system integrated with STRIPE, and after the user makes the payment, their subscription will be active and ready to view the full content
+of the entire blog. If the user does not wish to opt for the subscription, he will have limited access to the content of the posts. And all the data needed to make checks
+of subscriptions or user data, are saved in the FaunaDB database.
 <br>
 <br>
-Essa é uma aplicação Serverless, ou seja, todo o processo que dependeria de um backend foi integrado dentro do front e seguindo o padrão da JAMStack.
+This is a Serverless application, meaning that all the process that would depend on a backend was integrated within the frontend and following the JAMStack standard.
 <br>
-As postagens são feitas pelo painel do Prismic CMS e integradas diretamente pelo front.
+Posting is done from the Prismic CMS dashboard and integrated directly from the front end.
 
 
-## :rocket: Tecnologias ##
+## :rocket: Technologies ##
 
-As seguintes tecnologias foram utilizadas no projeto:
+The following technologies were used in the project:
 
 - [Next.js](https://nextjs.org/)
 - [Prismic CMS](https://prismic.io/)
 - [Stripe](https://stripe.com/)
 - [FaunaDB](https://fauna.com/)
 
-## :white_check_mark: Requerimentos ##
+## :white_check_mark: Requirements ##
 
 - [Node](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/lang/en/)
 
-## :checkered_flag: Começando ##
+## :checkered_flag: Getting started ##
 
 ```bash
 # Clone this project
 $ git clone https://github.com/khalleb/ignews
 
-# Access
+## Access
 $ cd ignews
 
 # Install dependencies
@@ -82,3 +82,6 @@ $ yarn dev
 
 # The server will initialize in the <http://localhost:3000>
 
+
+
+Translated with www.DeepL.com/Translator (free version)
