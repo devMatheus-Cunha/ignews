@@ -81,7 +81,3 @@ $ yarn install
 $ yarn dev
 
 # The server will initialize in the <http://localhost:3000>
-
-
-
-Translated with www.DeepL.com/Translator (free version)
