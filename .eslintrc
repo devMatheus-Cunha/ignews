@@ -20,9 +20,7 @@
 		"plugin:react/recommended",
 		"plugin:@typescript-eslint/eslint-recommended",
 		"plugin:@typescript-eslint/recommended",
-		"plugin:react-hooks/recommended",
-        "next",
-        "next/core-web-vitals"
+		"plugin:react-hooks/recommended"
 	],
 	"globals": {
 		"Atomics": "readonly",
