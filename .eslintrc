@@ -90,7 +90,7 @@
 		"react/jsx-indent-props": "off",
 		"import/no-duplicates": "off",
 		"import/prefer-default-export": "off",
-		"max-len ": "off"
+		"eslint-disable max-len": "off"
 	},
 	"ignorePatterns": ["build/**/*", "src/utils/stubber/stubs/**/*"]
 }
