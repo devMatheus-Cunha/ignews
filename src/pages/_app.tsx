@@ -3,6 +3,9 @@ import { AppProps } from "next/app"
 // style
 import "../styles/global.scss"
 
+// -------------------------------------------------
+// Export Function
+// -------------------------------------------------
 function MyApp({
 	Component, pageProps,
 }: AppProps) {
