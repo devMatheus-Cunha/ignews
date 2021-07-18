@@ -75,9 +75,9 @@ $ git clone https://github.com/khalleb/ignews
 $ cd ignews
 
 # Install dependencies
-$ yarn install
+$ npm install
 
 # Run the project
-$ yarn dev
+$ npm dev
 
 # The server will initialize in the <http://localhost:3000>
