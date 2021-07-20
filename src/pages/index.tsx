@@ -1,7 +1,9 @@
 import Head from "next/head"
 
+// components
 import { SubscribeButton } from "../components/SubscribeButton"
 
+// style
 import styles from "../styles/home.module.scss"
 
 // -------------------------------------------------
