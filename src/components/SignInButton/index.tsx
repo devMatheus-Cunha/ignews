@@ -19,7 +19,7 @@ export function SignInButton() {
 			className={styles.signInButton}
 		>
 			<FaGithub color="#04d361" />
-			Matheus Cunha
+			Matheus Gomes
 			<FiX color="#737380" className={styles.closeIcon} />
 		</button>
 	) : (
