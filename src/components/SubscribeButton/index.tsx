@@ -1,9 +1,8 @@
+// types
+import { SubscribeButtonProps } from "./types"
+
 // sytles
 import styles from "./style.module.scss"
-
-interface SubscribeButtonProps{
-	priceId: string,
-}
 
 // -------------------------------------------------
 // Export Function
