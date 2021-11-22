@@ -69,7 +69,7 @@ The following technologies were used in the project:
 
 ```bash
 # Clone this project
-$ git clone https://github.com/khalleb/ignews
+$ git clone https://github.com/devMatheus-Cunha/ignews.git
 
 ## Access
 $ cd ignews
