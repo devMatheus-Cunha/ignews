@@ -16,15 +16,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 			payment_method_types: ["card"],
 			billing_address_collection: "required",
 			line_items: [
-				{
-					price: "price_1JFjxKIQF5o15nSoSqRs0GV6",
-					quantity: 1,
-				},
+				{ price: "price_1JFjxKIQF5o15nSoSqRs0GV6", quantity: 1 },
 			],
 			mode: "subscription",
 			allow_promotion_codes: true,
-			success_url: process.env.STRIPE_SUCCESS_URL,
-			cancel_url: process.env.STRIPE_CANCEL_URL,
+			success_url: "https://localhost:3000/posts",
+			cancel_url: "https://localhost:3000",
 		});
 
 		return res.status(200).json({ sessionId: stripeCheckoutSession.id });
