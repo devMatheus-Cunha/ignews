@@ -21,7 +21,7 @@ export function SubscribeButton({ priceId }: SubscribeButtonProps) {
 	const handleSubcribe = async () => {
 		if (!session) {
 			signIn("github");
-			return true;
+			return;
 		}
 		// create checkout session
 		try {
@@ -35,7 +35,6 @@ export function SubscribeButton({ priceId }: SubscribeButtonProps) {
 		} catch (error) {
 			alert(error.message);
 		}
-		return true;
 	};
 
 	// -------------------------------------------------
