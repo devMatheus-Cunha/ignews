@@ -8,7 +8,6 @@ import { fauna } from "../../services/fauna";
 // stripe
 import { stripe } from "../../services/stripe"
 
-
 interface IUser {
     ref: {
         id: string;
