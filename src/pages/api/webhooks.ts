@@ -1,9 +1,12 @@
-/* eslint-disable no-case-declarations */
-/* eslint-disable no-restricted-syntax */
+// packages
 import { NextApiRequest, NextApiResponse } from "next";
 import { Readable } from "stream";
+
+// stripe
 import Stripe from "stripe";
 import { stripe } from "../../services/stripe";
+
+// lib
 import { saveSubscription } from "./_lib/manageSubscription";
 
 async function buffer(readable: Readable) {

@@ -5,7 +5,12 @@
 		},
 		"import/resolver": {
 			"node": {
-				"extensions": [".js", ".jsx", ".ts", ".tsx"]
+				"extensions": [
+					".js",
+					".jsx",
+					".ts",
+					".tsx"
+				]
 			}
 		}
 	},
@@ -57,16 +62,27 @@
 		"react/react-in-jsx-scope": "off",
 		"react/jsx-filename-extension": [
 			1,
-			{ "extensions": [".ts", ".tsx", ".js", ".jsx"] }
+			{
+				"extensions": [
+					".ts",
+					".tsx",
+					".js",
+					".jsx"
+				]
+			}
 		],
 		"react/jsx-props-no-spreading": 0,
 		// note you must disable the base rule as it can report incorrect errors
 		"no-use-before-define": "off",
 		"no-mixed-spaces-and-tabs": "off",
 		"no-empty-function": "warn",
-		"@typescript-eslint/no-empty-function": ["warn"],
+		"@typescript-eslint/no-empty-function": [
+			"warn"
+		],
 		"camelcase": "off",
-		"@typescript-eslint/no-use-before-define": ["warn"],
+		"@typescript-eslint/no-use-before-define": [
+			"warn"
+		],
 		"@typescript-eslint/explicit-module-boundary-types": "off",
 		"react/require-default-props": "off",
 		"eslint-disable consistent-return": "off",
@@ -74,23 +90,43 @@
 		"@typescript-eslint/linebreak-style": "off",
 		"react/destructuring-assignment": "off",
 		"no-plusplus": "off",
-		"max-len": [1, {"code": 120, "tabWidth":4}],
-		"no-shadow" : "off",
-		"@typescript-eslint/no-explicit-any" : "off",
+		"max-len": [
+			1,
+			{
+				"code": 120,
+				"tabWidth": 4
+			}
+		],
+		"no-shadow": "off",
+		"@typescript-eslint/no-explicit-any": "off",
 		"no-tabs": 0,
 		"semi": 0,
 		"react/no-array-index-key": 0,
 		"react/display-name": 0,
-		"quotes": ["warn", "double"],
-		"indent": ["warn", "tab"],
-		"react/jsx-indent": ["warn", "tab"],
+		"quotes": [
+			"warn",
+			"double"
+		],
+		"indent": [
+			"warn",
+			"tab"
+		],
+		"react/jsx-indent": [
+			"warn",
+			"tab"
+		],
 		"implicit-arrow-linebreak": 0,
 		"arrow-body-style": 0,
 		"no-debugger": "off",
 		"react/jsx-indent-props": "off",
 		"import/no-duplicates": "off",
 		"import/prefer-default-export": "off",
-		"eslint-disable max-len": "off"
+		"eslint-disable max-len": "off",
+		"no-case-declarations": "off",
+		"no-restricted-syntax": "off"
 	},
-	"ignorePatterns": ["build/**/*", "src/utils/stubber/stubs/**/*"]
+	"ignorePatterns": [
+		"build/**/*",
+		"src/utils/stubber/stubs/**/*"
+	]
 }
