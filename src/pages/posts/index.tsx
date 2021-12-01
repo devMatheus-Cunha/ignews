@@ -5,7 +5,11 @@ import { GetStaticProps } from "next";
 
 // prismic
 import Prismic from "@prismicio/client";
+import { RichText } from "prismic-dom"
 import { getPrismicClient } from "../../services/prismic";
+
+// interfaces
+import { IPostProps } from "./interface";
 
 // styles
 import styles from "./styles.module.scss";
@@ -13,7 +17,7 @@ import styles from "./styles.module.scss";
 // -------------------------------------------------
 // Export Function
 // -------------------------------------------------
-const Posts = () => {
+const Posts = ({ posts }:IPostProps) => {
 	return (
 		<>
 			<Head>
@@ -22,32 +26,15 @@ const Posts = () => {
 
 			<main className={styles.container}>
 				<div className={styles.posts}>
-					<a href="/">
-						<time>12 de março de 2021</time>
-						<strong>What is Lorem Ipsum?</strong>
-						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting
-							industry. Lorem Ipsum has been the industrys standard dummy
-						</p>
-					</a>
-
-					<a href="/">
-						<time>12 de março de 2021</time>
-						<strong>What is Lorem Ipsum?</strong>
-						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting
-							industry. Lorem Ipsum has been the industrys standard dummy
-						</p>
-					</a>
-
-					<a href="/">
-						<time>12 de março de 2021</time>
-						<strong>What is Lorem Ipsum?</strong>
-						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting
-							industry. Lorem Ipsum has been the industrys standard dummy
-						</p>
-					</a>
+					{posts.map((data) =>	(
+						<a href={data.slug} key={data.slug}>
+							<time>{data.updatedAt}</time>
+							<strong>{data.title}</strong>
+							<p>
+								{data.excerpt}
+							</p>
+						</a>
+					))}
 				</div>
 			</main>
 		</>
@@ -56,6 +43,9 @@ const Posts = () => {
 
 export default Posts;
 
+// -------------------------------------------------
+// Export Get Static Props
+// -------------------------------------------------
 export const getStaticProps: GetStaticProps = async () => {
 	const prismic = getPrismicClient();
 
@@ -67,7 +57,20 @@ export const getStaticProps: GetStaticProps = async () => {
 		},
 	);
 
+	const posts = response.results.map((post: any) => {
+		return {
+			slug: post.uid,
+			title: RichText.asText(post.data.title),
+			excerpt: post.data.content.find((content) => content.type === "paragraph")?.text ?? "",
+			updatedAt: new Date(post.last_publication_date).toLocaleDateString("pt-BR", {
+				day: "2-digit",
+				month: "long",
+				year: "numeric",
+			}),
+		}
+	})
+
 	return {
-		props: {},
+		props: { posts },
 	};
 };
