@@ -1,6 +1,11 @@
 /* eslint-disable max-len */
 import React from "react";
 import Head from "next/head";
+import { GetStaticProps } from "next";
+
+// prismic
+import Prismic from "@prismicio/client";
+import { getPrismicClient } from "../../services/prismic";
 
 // styles
 import styles from "./styles.module.scss";
@@ -50,3 +55,20 @@ const Posts = () => {
 };
 
 export default Posts;
+
+export const getStaticProps: GetStaticProps = async () => {
+	const prismic = getPrismicClient();
+
+	const response = await prismic.query([
+		Prismic.predicates.at("document.type", "post"),
+	], {
+		fetch: ["title", "content"],
+		pageSize: 100,
+	});
+
+	console.log(response.results);
+
+	return {
+		props: {},
+	};
+};
