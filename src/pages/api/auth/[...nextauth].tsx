@@ -5,6 +5,9 @@ import Providers from "next-auth/providers";
 // fauna
 import { fauna } from "../../../services/fauna";
 
+// -------------------------------------------------
+// Export Function
+// -------------------------------------------------
 export default NextAuth({
 	providers: [
 		Providers.GitHub({

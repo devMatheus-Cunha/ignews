@@ -9,6 +9,9 @@ import { Header } from "../components/Header";
 // styles
 import "../styles/global.scss";
 
+// -------------------------------------------------
+// Export Function
+// -------------------------------------------------
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<NextAuthProvider session={pageProps.session}>

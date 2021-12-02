@@ -1,25 +1,22 @@
-import Head from "next/head"
-import { GetStaticProps } from "next"
+import Head from "next/head";
+import { GetStaticProps } from "next";
 
 // services
 import { stripe } from "../services/stripe";
 
 // components
-import { SubscribeButton } from "../components/SubscribeButton"
+import { SubscribeButton } from "../components/SubscribeButton";
 
 // interfaces
 import { HomeProps } from "../interfaces/home";
 
 // style
-import styles from "../styles/home.module.scss"
+import styles from "../styles/home.module.scss";
 
 // -------------------------------------------------
 // Export Function
 // -------------------------------------------------
 export default function Home({ product }: HomeProps) {
-	// -------------------------------------------------
-	// Render
-	// -------------------------------------------------
 	return (
 		<>
 			<Head>
@@ -61,7 +58,7 @@ export default function Home({ product }: HomeProps) {
 export const getStaticProps: GetStaticProps = async () => {
 	const price = await stripe.prices.retrieve("price_1JFjxKIQF5o15nSoSqRs0GV6", {
 		expand: ["product"],
-	})
+	});
 
 	const product = {
 		priceId: price.unit_amount,
@@ -69,12 +66,12 @@ export const getStaticProps: GetStaticProps = async () => {
 			style: "currency",
 			currency: "USD",
 		}).format(price.unit_amount / 100),
-	}
+	};
 
 	return {
 		props: {
 			product,
 		},
 		revalidate: 60 * 60 * 24, // 24 hours
-	}
-}
+	};
+};
