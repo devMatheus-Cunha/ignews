@@ -37,7 +37,7 @@ export default function Post({ post }: IPostProps) {
 }
 
 // -------------------------------------------------
-// Export Get Static Props
+// Export Get Server Side Props
 // -------------------------------------------------
 export const getServerSideProps: GetServerSideProps = async ({
 	req,
