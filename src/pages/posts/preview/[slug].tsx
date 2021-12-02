@@ -1,8 +1,11 @@
 /* eslint-disable react/no-danger */
+import { useEffect } from "react";
+import { useSession } from "next-auth/client";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import { RichText } from "prismic-dom";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { getPrismicClient } from "../../../services/prismic";
 
 // interfaces
@@ -12,6 +15,13 @@ import { IPostProps } from "../../../interfaces/post";
 import styles from "../post.module.scss";
 
 export default function PostPreviw({ post }: IPostProps) {
+	const [session] = useSession();
+	const router = useRouter();
+	useEffect(() => {
+		if (session?.activeSubscription) {
+			router.push(`/posts/${post.slug}`);
+		}
+	}, [post.slug, router, session?.activeSubscription]);
 	return (
 		<>
 			<Head>
@@ -60,8 +70,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 	const post = {
 		slug,
-		title: RichText.asText(response.data.title),
-		content: RichText.asHtml(response.data.content.splice(0, 3)),
+		title: RichText.asText(response?.data.title),
+		content: RichText.asHtml(response?.data.content.splice(0, 3)),
 		updatedAt: new Date(response.last_publication_date).toLocaleDateString(
 			"pt-BR",
 			{
