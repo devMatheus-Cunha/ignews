@@ -124,7 +124,8 @@
 		"eslint-disable max-len": "off",
 		"no-case-declarations": "off",
 		"no-restricted-syntax": "off",
-		"jsx-a11y/anchor-is-valid": "off"
+		"jsx-a11y/anchor-is-valid": "off",
+		"react/no-danger": "off"
 	},
 	"ignorePatterns": [
 		"build/**/*",

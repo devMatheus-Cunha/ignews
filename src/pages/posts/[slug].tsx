@@ -1,7 +1,9 @@
-/* eslint-disable react/no-danger */
+// next
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/client";
 import Head from "next/head";
+
+// prismic
 import { RichText } from "prismic-dom";
 import { getPrismicClient } from "../../services/prismic";
 
@@ -11,6 +13,9 @@ import { IPostProps } from "../../interfaces/post";
 // styles
 import styles from "./post.module.scss";
 
+// -------------------------------------------------
+// Export Function
+// -------------------------------------------------
 export default function Post({ post }: IPostProps) {
 	return (
 		<>

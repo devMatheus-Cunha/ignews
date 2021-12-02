@@ -1,6 +1,7 @@
-import { NextApiRequest, NextApiResponse } from "next";
-
 import { Readable } from "stream"
+
+// next
+import { NextApiRequest, NextApiResponse } from "next";
 
 // stripe
 import Stripe from "stripe";
@@ -87,4 +88,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 		res.setHeader("Allow", "POST");
 		res.status(405).end("Method not allowed");
 	}
+
+	return true
 }

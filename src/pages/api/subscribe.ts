@@ -1,3 +1,4 @@
+// next
 import { NextApiRequest, NextApiResponse } from "next"
 import { getSession } from "next-auth/client"
 

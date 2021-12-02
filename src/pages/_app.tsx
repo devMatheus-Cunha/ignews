@@ -1,9 +1,9 @@
 import { AppProps } from "next/app";
 
-// Providers
+// providers
 import { Provider as NextAuthProvider } from "next-auth/client";
 
-// Components
+// components
 import { Header } from "../components/Header";
 
 // styles

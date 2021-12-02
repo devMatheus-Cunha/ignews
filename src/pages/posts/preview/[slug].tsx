@@ -1,11 +1,14 @@
-/* eslint-disable react/no-danger */
 import { useEffect } from "react";
+
+// next
 import { useSession } from "next-auth/client";
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import { RichText } from "prismic-dom";
 import Link from "next/link";
 import { useRouter } from "next/router";
+
+// prismic
+import { RichText } from "prismic-dom";
 import { getPrismicClient } from "../../../services/prismic";
 
 // interfaces
@@ -14,14 +17,19 @@ import { IPostProps } from "../../../interfaces/post";
 // styles
 import styles from "../post.module.scss";
 
+// -------------------------------------------------
+// Export Function
+// -------------------------------------------------
 export default function PostPreviw({ post }: IPostProps) {
 	const [session] = useSession();
 	const router = useRouter();
+
 	useEffect(() => {
 		if (session?.activeSubscription) {
 			router.push(`/posts/${post.slug}`);
 		}
 	}, [post.slug, router, session?.activeSubscription]);
+
 	return (
 		<>
 			<Head>
@@ -81,8 +89,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 			},
 		),
 	};
-
-	// if (!session) {}
 
 	return {
 		props: {

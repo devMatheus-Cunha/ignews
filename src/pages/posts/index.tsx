@@ -1,6 +1,7 @@
-import { useSession } from "next-auth/client";
-/* eslint-disable max-len */
 import React from "react";
+
+// next
+import { useSession } from "next-auth/client";
 import Head from "next/head";
 import Link from "next/link";
 import { GetStaticProps } from "next";
