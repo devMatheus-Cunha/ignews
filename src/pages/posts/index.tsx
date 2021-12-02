@@ -9,7 +9,7 @@ import { RichText } from "prismic-dom"
 import { getPrismicClient } from "../../services/prismic";
 
 // interfaces
-import { IPostProps } from "./interface";
+import { IPostProps } from "../../interfaces/posts";
 
 // styles
 import styles from "./styles.module.scss";

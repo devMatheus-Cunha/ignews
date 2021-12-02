@@ -5,17 +5,11 @@ import { getSession } from "next-auth/client"
 import { query as q } from "faunadb";
 import { fauna } from "../../services/fauna";
 
+// interface
+import { IUser } from "../../interfaces/subscribe";
+
 // stripe
 import { stripe } from "../../services/stripe"
-
-interface IUser {
-    ref: {
-        id: string;
-    }
-    data: {
-        stripe_customer_id: string;
-    }
-}
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
 	if (req.method === "POST") {
