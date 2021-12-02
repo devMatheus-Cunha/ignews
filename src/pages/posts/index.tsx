@@ -1,3 +1,4 @@
+import { useSession } from "next-auth/client";
 /* eslint-disable max-len */
 import React from "react";
 import Head from "next/head";
@@ -19,6 +20,7 @@ import styles from "./styles.module.scss";
 // Export Function
 // -------------------------------------------------
 const Posts = ({ posts }:IPostsProps) => {
+	const [session] = useSession()
 	return (
 		<>
 			<Head>
@@ -28,7 +30,12 @@ const Posts = ({ posts }:IPostsProps) => {
 			<main className={styles.container}>
 				<div className={styles.posts}>
 					{posts.map((data) =>	(
-						<Link href={`posts/${data.slug}`} key={data.slug}>
+						<Link
+							href={
+								session?.activeSubscription ? `/posts/${data.slug}` : `/posts/preview/${data.slug}`
+							}
+							key={data.slug}
+						>
 							<a>
 								<time>{data.updatedAt}</time>
 								<strong>{data.title}</strong>
