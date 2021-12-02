@@ -1,8 +1,10 @@
+import Link from "next/link";
+
 // components
-import { SignInButton } from "../SignInButton"
+import { SignInButton } from "../SignInButton";
 
 // styles
-import style from "./style.module.scss"
+import style from "./style.module.scss";
 
 // -------------------------------------------------
 // Export Function
@@ -16,11 +18,17 @@ export function Header() {
 			<div className={style.headerContent}>
 				<img src="/images/logo.svg" alt="ig.news" />
 				<nav>
-					<a href="/" className={style.active}>Home</a>
-					<a href="/posts">Posts</a>
+					<Link href="/">
+						<a className={style.active}>
+							Home
+						</a>
+					</Link>
+					<Link href="/posts">
+						<a>Posts</a>
+					</Link>
 				</nav>
 				<SignInButton />
 			</div>
 		</header>
-	)
+	);
 }
