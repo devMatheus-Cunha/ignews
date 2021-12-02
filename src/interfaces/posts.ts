@@ -5,6 +5,6 @@ type Post = {
   updatedAt:string
 }
 
-export interface IPostProps {
+export interface IPostsProps {
   posts: Post[]
 }

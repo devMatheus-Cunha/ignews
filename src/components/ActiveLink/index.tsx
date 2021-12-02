@@ -14,7 +14,7 @@ export const ActiveLink = ({
 }: IActiveLinkProps) => {
 	const { asPath } = useRouter();
 
-	const className = asPath === props.href ? activeClassName : ""
+	const className = asPath === props.href ? activeClassName : "";
 	// -------------------------------------------------
 	// Render
 	// -------------------------------------------------
