@@ -12,8 +12,6 @@ import { IPostProps } from "../../interfaces/post";
 import styles from "./post.module.scss";
 
 export default function Post({ post }: IPostProps) {
-	console.log(post);
-
 	return (
 		<>
 			<Head>
@@ -45,8 +43,18 @@ export const getServerSideProps: GetServerSideProps = async ({
 	req,
 	params,
 }) => {
-	const session = getSession({ req });
+	const session = await getSession({ req });
 	const { slug } = params;
+
+	if (!session?.activeSubscription) {
+		return {
+			redirect: {
+				destination: "/",
+				permanent: false,
+			},
+		}
+	}
+
 	const prismic = getPrismicClient(req);
 
 	const response = await prismic.getByUID("pos", String(slug), {});
@@ -64,8 +72,6 @@ export const getServerSideProps: GetServerSideProps = async ({
 			},
 		),
 	};
-
-	// if (!session) {}
 
 	return {
 		props: {

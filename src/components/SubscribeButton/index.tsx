@@ -1,5 +1,6 @@
 /* eslint-disable no-alert */
 import { useSession, signIn } from "next-auth/client";
+import { useRouter } from "next/router";
 
 // api
 import { api } from "../../services/api";
@@ -16,6 +17,7 @@ import styles from "./style.module.scss";
 // -------------------------------------------------
 export function SubscribeButton({ priceId }: SubscribeButtonProps) {
 	const [session] = useSession();
+	const router = useRouter()
 
 	// functions
 	const handleSubcribe = async () => {
@@ -23,7 +25,12 @@ export function SubscribeButton({ priceId }: SubscribeButtonProps) {
 			signIn("github");
 			return;
 		}
-		// create checkout session
+
+		if (session.activeSubscription) {
+			router.push("/posts")
+			return
+		}
+
 		try {
 			const response = await api.post("/subscribe");
 
