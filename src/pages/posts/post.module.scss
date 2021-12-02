@@ -37,5 +37,29 @@
         margin: 0.5rem 0;
       }
     }
+
+    &.previewContent {
+      background: linear-gradient(var(--gray-100), transparent);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.continueReanding {
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--gray-850);
+  border-radius:108px;
+  font-size: 1.25rem;
+  margin: 4rem 0 2rem;
+
+  a {
+    color: var(--yellow-500);
+    margin-left: 0.4rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
