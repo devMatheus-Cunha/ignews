@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import { GetStaticProps } from "next";
 
 // prismic
@@ -9,7 +10,7 @@ import { RichText } from "prismic-dom"
 import { getPrismicClient } from "../../services/prismic";
 
 // interfaces
-import { IPostProps } from "../../interfaces/posts";
+import { IPostsProps } from "../../interfaces/posts";
 
 // styles
 import styles from "./styles.module.scss";
@@ -17,7 +18,7 @@ import styles from "./styles.module.scss";
 // -------------------------------------------------
 // Export Function
 // -------------------------------------------------
-const Posts = ({ posts }:IPostProps) => {
+const Posts = ({ posts }:IPostsProps) => {
 	return (
 		<>
 			<Head>
@@ -27,13 +28,15 @@ const Posts = ({ posts }:IPostProps) => {
 			<main className={styles.container}>
 				<div className={styles.posts}>
 					{posts.map((data) =>	(
-						<a href={data.slug} key={data.slug}>
-							<time>{data.updatedAt}</time>
-							<strong>{data.title}</strong>
-							<p>
-								{data.excerpt}
-							</p>
-						</a>
+						<Link href={`posts/${data.slug}`} key={data.slug}>
+							<a>
+								<time>{data.updatedAt}</time>
+								<strong>{data.title}</strong>
+								<p>
+									{data.excerpt}
+								</p>
+							</a>
+						</Link>
 					))}
 				</div>
 			</main>
