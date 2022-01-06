@@ -11,6 +11,9 @@
   "dependencies": {
     "@prismicio/client": "^5.1.0",
     "@stripe/stripe-js": "^1.21.1",
+    "@testing-library/dom": "^8.11.1",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
     "axios": "^0.24.0",
     "faunadb": "^4.4.1",
     "jest": "^27.4.7",
