@@ -1,5 +1,8 @@
-import { Header } from ".";
+// jest
 import { render, screen } from "@testing-library/react";
+
+// components
+import { Header } from ".";
 
 jest.mock("next/router", () => {
   return {
