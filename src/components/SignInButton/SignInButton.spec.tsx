@@ -1,6 +1,13 @@
+// jest
 import { render, screen } from "@testing-library/react";
+
+// utils
 import { mocked } from "ts-jest/utils";
+
+// next
 import { useSession } from "next-auth/client";
+
+// components
 import { SignInButton } from ".";
 
 jest.mock("next-auth/client");
