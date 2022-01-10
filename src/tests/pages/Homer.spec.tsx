@@ -19,4 +19,27 @@ describe("Home page", () => {
 
     expect(screen.getByText("for R$10,00 month")).toBeInTheDocument();
   });
+
+  it("loads initial data", async () => {
+    const retrieveStripePricesMocked = mocked(stripe.prices.retrieve);
+
+    retrieveStripePricesMocked.mockResolvedValueOnce({
+      id: "fake-value-id",
+      unit_amount: 1000,
+    } as any);
+
+    const response = await getStaticProps({});
+
+    expect(response).toEqual(
+      expect.objectContaining({
+        // Verifica se existe no minímo essas propriedades no objeto
+        props: {
+          product: {
+            priceId: 1000,
+            amount: "$10.00",
+          },
+        },
+      })
+    );
+  });
 });
