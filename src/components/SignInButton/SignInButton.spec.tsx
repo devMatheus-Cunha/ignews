@@ -10,6 +10,7 @@ import { useSession } from "next-auth/client";
 // components
 import { SignInButton } from ".";
 
+// mock
 jest.mock("next-auth/client");
 
 describe("SignInButton component", () => {

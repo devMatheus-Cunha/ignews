@@ -4,6 +4,7 @@ import { render, screen } from "@testing-library/react";
 // components
 import { ActiveLink } from ".";
 
+// mock
 jest.mock("next/router", () => {
   return {
     useRouter() {

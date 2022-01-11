@@ -1,7 +1,15 @@
 import { render, screen } from "@testing-library/react";
+
+// utils
 import { mocked } from "ts-jest/utils";
+
+// prismic
 import { getPrismicClient } from "../../services/prismic";
+
+// pages
 import Posts, { getStaticProps } from "../../pages/posts";
+
+// mock
 jest.mock("next/router");
 jest.mock("next-auth/client", () => {
   return {

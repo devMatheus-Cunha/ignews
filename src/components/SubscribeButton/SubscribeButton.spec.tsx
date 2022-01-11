@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 // components
 import { SubscribeButton } from ".";
 
+// mock
 jest.mock("next-auth/client");
 
 jest.mock("next/router");
