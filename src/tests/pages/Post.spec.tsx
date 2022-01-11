@@ -1,9 +1,18 @@
 import { render, screen } from "@testing-library/react";
+
+// utils
 import { mocked } from "ts-jest/utils";
+
+// prismic
 import { getPrismicClient } from "../../services/prismic";
+
+// page
 import Post, { getServerSideProps } from "../../pages/posts/[slug]";
+
+// next
 import { getSession } from "next-auth/client";
 
+// mock
 jest.mock("next/router");
 jest.mock('next-auth/client');
 jest.mock('../../services/prismic');
@@ -48,7 +57,7 @@ describe("Posts page", () => {
     getSessionMocked.mockResolvedValueOnce({
       activeSubscription: 'fake-active-subscription'
     } as any)
-    
+
     getPrismicClientMocked.mockReturnValueOnce({
       getByUID: jest.fn().mockResolvedValueOnce({
         data: {
