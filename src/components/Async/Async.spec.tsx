@@ -9,12 +9,12 @@ import Async from ".";
 
 describe("Async component", () => {
   it("renders correctly", async () => {
-    const { debug } = render(<Async />);
+    render(<Async />);
 
     expect(screen.getByText("Hello Bro")).toBeInTheDocument();
 
-    // 2 options
-    // 1 - expect(await screen.findByText("Button")).toBeInTheDocument()
+    // 3 options
+       expect(await screen.findByText("Button")).toBeInTheDocument()
     /* 2 - await waitFor(() => {
        return expect( expect(screen.getByText("Button")).toBeInTheDocument()
        )
