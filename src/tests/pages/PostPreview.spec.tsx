@@ -29,4 +29,22 @@ describe('Post preview page', () => {
     expect(screen.getByText('Post excerpt')).toBeInTheDocument();
     expect(screen.getByText('Wanna continue reading?')).toBeInTheDocument();
   });
+
+  it('renders user to full post when use is subscribed', () => {
+    const useSessionMocked = mocked(useSession)
+    const useRouterMocked = mocked(useRouter)
+    const pushMocked = jest.fn()
+
+    useSessionMocked.mockReturnValueOnce([
+      { activeSubscription: 'fake-active-subscription'}
+    ] as any)
+
+    useRouterMocked.mockReturnValueOnce({
+      push: pushMocked
+    } as any)
+
+    render(<Post post={post} />)
+
+    expect(pushMocked).toHaveBeenCalledWith('/posts/my-new-post')
+  });
 })
